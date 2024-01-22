@@ -1,0 +1,5 @@
+node_modules
+.next
+package-lock.json
+possibleTypes.json
+src/queries/__generated__/**/*
