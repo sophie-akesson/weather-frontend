@@ -10,7 +10,7 @@ export default meta;
 
 type Story = StoryObj<typeof Navigation>;
 
-export const FrontPageNav: Story = {
+export const OnStartPage: Story = {
   args: {
     city: 'Sundsvall',
   },
@@ -24,7 +24,7 @@ export const FrontPageNav: Story = {
   },
 };
 
-export const DetailsPageNav: Story = {
+export const OnDetailsPage: Story = {
   args: {
     city: 'Sundsvall',
   },
