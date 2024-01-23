@@ -8,7 +8,7 @@ export interface DropdownOption {
   value: string;
 }
 
-export const Dropdown = ({ options, handleDropdownChange }: Dropdown) => {
+export const Dropdown: React.FC<Dropdown> = ({ options, handleDropdownChange }) => {
   return (
     <select onChange={(e) => handleDropdownChange(e.target.value)}>
       {options.map((option) => (
