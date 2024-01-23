@@ -1,8 +1,5 @@
-import { getAllByRole, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-
-import { cities } from '@/lib/cities';
-import { transformCities } from '@/lib/transformCities';
 
 import { Card } from './Card';
 
