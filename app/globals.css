@@ -5,4 +5,30 @@
 }
 
 :root {
+  /* Content sizing */
+  --max-content-width: 85.375rem;
+
+  /* Spacing */
+  --spacing-xs: 1rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 3rem;
+  --spacing-xl: 6rem;
+  --spacing-xxl: 8rem;
+
+  /* Colors */
+  --background: #1b2337;
+  --on-background-primary: #fff;
+  --on-background-secondary: #bd00c1;
+  --foreground: #fff;
+  --on-foreground-primary: #1b2337;
+  --on-foreground-secondary: #bd00c1;
+
+  /* Font stack */
+  --size-paragraph: 1rem;
+  --size-h1: 7.5rem;
+  --size-h2: 5.5rem;
+  --size-h3: 3.5rem;
+  --size-h4: 1.4375rem;
+  --size-h5: 1.5rem;
+  --size-h6: 1.25rem;
 }
