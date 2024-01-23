@@ -4,7 +4,7 @@ interface Props {
   icon: number;
 }
 
-export const Card: React.FC<Props> = ({ label, value, icon }) => {
+export const Card = ({ label, value, icon }: Props) => {
   return (
     <div>
       {/* To be replaced with actual icon later on */}

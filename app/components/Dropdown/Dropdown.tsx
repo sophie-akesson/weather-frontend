@@ -8,9 +8,16 @@ export interface DropdownOption {
   value: string;
 }
 
-export const Dropdown: React.FC<Props> = ({ options, handleDropdownChange }) => {
+export const Dropdown = ({ options, handleDropdownChange }: Props) => {
   return (
-    <select onChange={(e) => handleDropdownChange(e.target.value)}>
+    <select
+      name="city"
+      defaultValue="default"
+      onChange={(e) => handleDropdownChange(e.target.value)}
+    >
+      <option value="default" disabled>
+        Välj önskad stad
+      </option>
       {options.map((option) => (
         <option key={option.name} value={option.name}>
           {option.name}

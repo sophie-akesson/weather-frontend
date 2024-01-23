@@ -7,7 +7,7 @@ interface Props {
   city: string;
 }
 
-export const Navigation: React.FC<Props> = ({ city }) => {
+export const Navigation = ({ city }: Props) => {
   const pathname = usePathname();
 
   return (
