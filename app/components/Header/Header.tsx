@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+
 import { Dropdown } from '@/components/Dropdown/Dropdown';
 import { Navigation } from '@/components/Navigation/Navigation';
 import { TimeSpan } from '@/components/TimeSpan/TimeSpan';
@@ -9,10 +13,10 @@ interface Props {
 }
 
 export const Header = ({ handleCityChange }: Props) => {
-  let city = '';
+  const [city, setCity] = useState('');
 
   const updateCity = (value: string) => {
-    city = value;
+    setCity(value);
     handleCityChange(value);
   };
 
