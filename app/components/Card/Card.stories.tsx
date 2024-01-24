@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Card } from './Card';
+import { Card, Label } from './Card';
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -12,8 +12,8 @@ type Story = StoryObj<typeof Card>;
 
 export const Primary: Story = {
   args: {
-    label: 'Temperatur',
+    label: 'Temperatur' as Label,
     value: '16°',
-    icon: 4,
+    icon: '4',
   },
 };

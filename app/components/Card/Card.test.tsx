@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import { Card } from './Card';
+import { Card, Label } from './Card';
 
 const mock = {
-  label: 'Temperatur',
+  label: 'Temperatur' as Label,
   value: '16°',
-  icon: 4,
+  icon: '4',
 };
 
 describe('Card', () => {

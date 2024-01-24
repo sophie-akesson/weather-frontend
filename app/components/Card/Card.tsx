@@ -1,17 +1,20 @@
 interface Props {
-  label: string;
-  value: string;
-  icon: number;
+  label: Label;
+  value?: string;
+  icon?: string;
 }
+
+export type Label = 'Temperatur' | 'Vindstyrka' | 'Nederbörd' | 'Luftfuktighet';
 
 export const Card = ({ label, value, icon }: Props) => {
   return (
     <div>
       {/* To be replaced with actual icon later on */}
-      {icon}
+      {label === 'Temperatur' && icon ? icon : null}
+      {label === 'Temperatur' && !icon ? '--' : null}
       <div>
         <h2>{label}</h2>
-        <span>{value}</span>
+        {value ? <span>{value}</span> : '--'}
       </div>
     </div>
   );
