@@ -6,7 +6,7 @@ import { cities } from '@/utils/cities';
 import { Header } from '@/components/Header/Header';
 import { getForecast } from '@/utils/smhiService';
 import { Name, SMHIServiceResponse, TimeSeries } from '@/types/smhiServiceResponse';
-import { getHighestValue } from '@/utils/transformDayForecast';
+import { getAccumulatedPrecipitation, getHighestValue } from '@/utils/transformDayForecast';
 import { Card } from '@/components/Card/Card';
 
 export default function Home() {
@@ -35,10 +35,10 @@ export default function Home() {
       setTemperature(highestTemperature.parameter.toString());
       setIcon(highestTemperature.wsymb2Value.toString());
 
-      const highestPrecipitation = getHighestValue(forecast, Name.Pmean);
-      setPrecipitation(highestPrecipitation.parameter.toString());
+      const highestPrecipitation = getAccumulatedPrecipitation(forecast);
+      setPrecipitation(highestPrecipitation.toString());
 
-      const highestWind = getHighestValue(forecast, Name.Gust);
+      const highestWind = getHighestValue(forecast, Name.Ws);
       setWind(highestWind.parameter.toString());
 
       const highestHumidity = getHighestValue(forecast, Name.R);

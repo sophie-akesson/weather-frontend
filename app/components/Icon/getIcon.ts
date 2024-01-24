@@ -1,0 +1,60 @@
+export const getIcon = (number: number) => {
+  switch (number) {
+    case 1:
+      return '/icons/1530392_weather_sun_sunny_temperature.png';
+    case 2:
+      return '/icons/1530391_clouds_sun_sunny_weather.png';
+    case 3:
+      return '/icons/1530391_clouds_sun_sunny_weather.png';
+    case 4:
+      return '/icons/1530391_clouds_sun_sunny_weather.png';
+    case 5:
+      return '/icons/1530369_cloudy_weather_clouds_cloud.png';
+    case 6:
+      return '/icons/1530369_cloudy_weather_clouds_cloud.png';
+    case 7:
+      return '/icons/1530368_foggy_weather_fog_clouds_cloudy.png';
+    case 8:
+      return '/icons/1530365_rain_cloud_drizzel_weather.png';
+    case 9:
+      return '/icons/1530364_rain_storm_shower_weather.png';
+    case 10:
+      return '/icons/1530362_cloudy_weather_forecast_rain_clouds.png';
+    case 11:
+      return '/icons/1530363_storm_weather_night_clouds.png';
+    case 12:
+      return '/icons/1530370_hail_weather_hailstone_clouds_snow.png';
+    case 13:
+      return '/icons/1530370_hail_weather_hailstone_clouds_snow.png';
+    case 14:
+      return '/icons/1530370_hail_weather_hailstone_clouds_snow.png';
+    case 15:
+      return '/icons/1530371_winter_snow_clouds_weather.png';
+    case 16:
+      return '/icons/1530371_winter_snow_clouds_weather.png';
+    case 17:
+      return '/icons/1530371_winter_snow_clouds_weather.png';
+    case 18:
+      return '/icons/1530365_rain_cloud_drizzel_weather.png';
+    case 19:
+      return '/icons/1530364_rain_storm_shower_weather.png';
+    case 20:
+      return '/icons/1530362_cloudy_weather_forecast_rain_clouds.png';
+    case 21:
+      return '/icons/1530363_storm_weather_night_clouds.png';
+    case 22:
+      return '/icons/1530370_hail_weather_hailstone_clouds_snow.png';
+    case 23:
+      return '/icons/1530370_hail_weather_hailstone_clouds_snow.png';
+    case 24:
+      return '/icons/1530370_hail_weather_hailstone_clouds_snow.png';
+    case 25:
+      return '/icons/1530371_winter_snow_clouds_weather.png';
+    case 26:
+      return '/icons/1530371_winter_snow_clouds_weather.png';
+    case 27:
+      return '/icons/1530371_winter_snow_clouds_weather.png';
+    default:
+      return null;
+  }
+};

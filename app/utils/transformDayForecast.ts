@@ -24,3 +24,16 @@ export const getHighestValue = (data: SMHIServiceResponse, parameterName: Name) 
     { parameter: -Infinity, wsymb2Value: -Infinity }
   );
 };
+
+export const getAccumulatedPrecipitation = (data: SMHIServiceResponse) => {
+  const today = data.timeSeries.filter(
+    (entry) => format(entry.validTime, 'yyyy/MM/dd') === format(new Date(), 'yyyy/MM/dd')
+  );
+
+  return today.reduce((previous, current) => {
+    const precipitation =
+      current.parameters.find((param) => param.name === Name.Pmin)?.values[0] || 0;
+
+    return previous + precipitation;
+  }, 0);
+};
