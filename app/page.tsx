@@ -1,14 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { cities } from '@/lib/cities';
+import { cities } from '@/utils/cities';
 import { Header } from '@/components/Header/Header';
-import { getForecast } from '@/lib/smhiService';
-import { SMHIServiceResponse } from '@/types/smhiServiceResponse';
+import { getForecast } from '@/utils/smhiService';
+import { Name, SMHIServiceResponse, TimeSeries } from '@/types/smhiServiceResponse';
+import { getHighestValue } from '@/utils/transformDayForecast';
+import { Card } from '@/components/Card/Card';
 
 export default function Home() {
   const [forecast, setForecast] = useState<SMHIServiceResponse>();
+  const [temperature, setTemperature] = useState('');
+  const [icon, setIcon] = useState('');
+  const [precipitation, setPrecipitation] = useState('');
+  const [wind, setWind] = useState('');
+  const [humidity, setHumidity] = useState('');
 
   const getCityData = async (dropdownCity: string) => {
     const selectedCity = cities.find((city) => city.name === dropdownCity);
@@ -20,12 +27,33 @@ export default function Home() {
     setForecast(data);
   };
 
+  useEffect(() => {
+    console.log(forecast);
+
+    if (forecast) {
+      const highestTemperature = getHighestValue(forecast, Name.T);
+      setTemperature(highestTemperature.parameter.toString());
+      setIcon(highestTemperature.wsymb2Value.toString());
+
+      const highestPrecipitation = getHighestValue(forecast, Name.Pmean);
+      setPrecipitation(highestPrecipitation.parameter.toString());
+
+      const highestWind = getHighestValue(forecast, Name.Gust);
+      setWind(highestWind.parameter.toString());
+
+      const highestHumidity = getHighestValue(forecast, Name.R);
+      setHumidity(highestHumidity.parameter.toString());
+    }
+  }, [forecast]);
+
   return (
     <>
       <Header handleCityChange={getCityData} />
       <main>
-        <p>Väder från SMHI</p>
-        {forecast ? <p>{forecast.geometry.coordinates[0]}</p> : null}
+        <Card label="Temperatur" value={temperature} icon={icon} />
+        <Card label="Nederbörd" value={precipitation} />
+        <Card label="Vindstyrka" value={wind} />
+        <Card label="Luftfuktighet" value={humidity} />
       </main>
     </>
   );

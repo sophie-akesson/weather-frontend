@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { cities } from '@/lib/cities';
-import { transformCities } from '@/lib/transformCities';
+import { cities } from '@/utils/cities';
+import { transformCities } from '@/utils/transformCities';
 
 import { Dropdown } from './Dropdown';
 

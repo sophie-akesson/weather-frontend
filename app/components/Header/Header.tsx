@@ -1,8 +1,8 @@
 import { Dropdown } from '@/components/Dropdown/Dropdown';
 import { Navigation } from '@/components/Navigation/Navigation';
 import { TimeSpan } from '@/components/TimeSpan/TimeSpan';
-import { cities } from '@/lib/cities';
-import { transformCities } from '@/lib/transformCities';
+import { cities } from '@/utils/cities';
+import { transformCities } from '@/utils/transformCities';
 
 interface Props {
   handleCityChange: (city: string) => void;
