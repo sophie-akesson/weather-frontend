@@ -1,8 +1,10 @@
+'use server';
+
 import { SMHIServiceResponse } from '@/types/smhiServiceResponse';
 
 export const getForecast = async (
-  longitude: string,
-  latitude: string
+  longitude: number,
+  latitude: number
 ): Promise<SMHIServiceResponse> => {
   try {
     const response = await fetch(

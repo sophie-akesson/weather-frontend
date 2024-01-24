@@ -12,7 +12,7 @@ export const Navigation = ({ city }: Props) => {
 
   return (
     <nav>
-      {pathname === '/' ? (
+      {pathname !== null && !pathname.includes('hours') ? (
         <Link href={`${city.toLocaleLowerCase()}/hours`}>10-dygnsprognos</Link>
       ) : (
         <Link href="/">Dagens prognos</Link>
