@@ -1,9 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { CityProvider } from '@/utils/cityContext';
+
 import { Navigation } from './Navigation';
+
+const ContextDecorator = (Story: any) => (
+  <CityProvider>
+    <Story />
+  </CityProvider>
+);
 
 const meta: Meta<typeof Navigation> = {
   component: Navigation,
+  decorators: [ContextDecorator],
 };
 
 export default meta;
@@ -11,9 +20,6 @@ export default meta;
 type Story = StoryObj<typeof Navigation>;
 
 export const OnStartPage: Story = {
-  args: {
-    city: 'Sundsvall',
-  },
   parameters: {
     nextjs: {
       appDirectory: true,
@@ -25,9 +31,6 @@ export const OnStartPage: Story = {
 };
 
 export const OnDetailsPage: Story = {
-  args: {
-    city: 'Sundsvall',
-  },
   parameters: {
     nextjs: {
       appDirectory: true,

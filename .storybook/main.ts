@@ -15,6 +15,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  staticDirs: ['../public/'],
   // Resolves ts paths https://github.com/storybookjs/storybook/issues/25649
   webpack(baseConfig) {
     baseConfig.resolve = {

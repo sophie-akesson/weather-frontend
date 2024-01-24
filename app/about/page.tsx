@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <main>
-      <h1>Om denna sida</h1>
+      <p>Denna sida är byggd med data från SMHI.</p>
     </main>
   );
 }
