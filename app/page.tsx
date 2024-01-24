@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react';
 
 import { cities } from '@/utils/cities';
-import { Header } from '@/components/Header/Header';
 import { getForecast } from '@/utils/smhiService';
-import { Name, SMHIServiceResponse, TimeSeries } from '@/types/smhiServiceResponse';
+import { Name, SMHIServiceResponse } from '@/types/smhiServiceResponse';
 import { getAccumulatedPrecipitation, getHighestValue } from '@/utils/transformDayForecast';
 import { Card } from '@/components/Card/Card';
+import { ICityContext, useCityContext } from '@/utils/cityContext';
 
 export default function Home() {
+  const { cityState } = useCityContext() as ICityContext;
   const [forecast, setForecast] = useState<SMHIServiceResponse>();
   const [temperature, setTemperature] = useState('');
   const [icon, setIcon] = useState('');
@@ -26,6 +27,10 @@ export default function Home() {
 
     setForecast(data);
   };
+
+  useEffect(() => {
+    getCityData(cityState);
+  }, [cityState]);
 
   useEffect(() => {
     console.log(forecast);
@@ -47,14 +52,11 @@ export default function Home() {
   }, [forecast]);
 
   return (
-    <>
-      <Header handleCityChange={getCityData} />
-      <main>
-        <Card label="Temperatur" value={temperature} icon={icon} />
-        <Card label="Nederbörd" value={precipitation} />
-        <Card label="Vindstyrka" value={wind} />
-        <Card label="Luftfuktighet" value={humidity} />
-      </main>
-    </>
+    <main>
+      <Card label="Temperatur" value={temperature} icon={icon} />
+      <Card label="Nederbörd" value={precipitation} />
+      <Card label="Vindstyrka" value={wind} />
+      <Card label="Luftfuktighet" value={humidity} />
+    </main>
   );
 }

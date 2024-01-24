@@ -8,28 +8,32 @@ import { Dropdown } from './Dropdown';
 
 const transformedCities = transformCities(cities);
 
+jest.mock('../../utils/cityContext', () => ({
+  useCityContext: () => {
+    return {
+      cityState: 'Sundsvall',
+    };
+  },
+}));
+
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+  usePathname: jest.fn(),
+}));
+
 describe('Dropdown', () => {
   it('renders successfully', () => {
-    const mockedDropdownChange = jest.fn();
-    const { container } = render(
-      <Dropdown options={transformedCities} handleDropdownChange={mockedDropdownChange} />
-    );
+    const { container } = render(<Dropdown options={transformedCities} />);
     expect(container).toBeInTheDocument();
   });
 
   it('should have text content', () => {
-    const mockedDropdownChange = jest.fn();
-    const { container } = render(
-      <Dropdown options={transformedCities} handleDropdownChange={mockedDropdownChange} />
-    );
+    const { container } = render(<Dropdown options={transformedCities} />);
     expect(container).toHaveTextContent('Sundsvall');
   });
 
   it('should update text content on change to second option', () => {
-    const mockedDropdownChange = jest.fn();
-    const { container } = render(
-      <Dropdown options={transformedCities} handleDropdownChange={mockedDropdownChange} />
-    );
+    const { container } = render(<Dropdown options={transformedCities} />);
     const options = container.children[0];
     const dropdownOptions = getAllByRole(container, 'option');
 
