@@ -2,6 +2,7 @@
   background-color: var(--color-foreground);
   border-radius: var(--radius);
   padding: var(--spacing-xs);
+  width: 100%;
 }
 
 .values {

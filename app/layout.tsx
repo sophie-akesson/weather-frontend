@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Rubik } from 'next/font/google';
 
+import { CityProvider } from '@/utils/cityContext';
+import { Header } from '@/components/Header/Header';
+
 import './globals.css';
-import { CityProvider } from './utils/cityContext';
-import { Header } from './components/Header/Header';
 
 const rubik = Rubik({ subsets: ['latin'] });
 

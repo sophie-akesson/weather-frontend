@@ -1,3 +1,7 @@
+.timespan {
+  color: var(--color-on-background-primary);
+}
+
 @media (min-width: 1024px) {
   .timespan {
     min-width: 350px;
