@@ -12,16 +12,25 @@ export type Label = 'Temperatur' | 'Vindstyrka' | 'Nederbörd' | 'Luftfuktighet'
 
 export const Card = ({ label, value, icon }: Props) => {
   return (
-    <div>
-      {label === 'Temperatur' && icon ? (
-        <div className={styles.icon}>
-          <Icon number={icon} />
-        </div>
-      ) : null}
-      {label === 'Temperatur' && !icon ? '--' : null}
-      <div>
-        <h2>{label}</h2>
-        {value ? <span>{value}</span> : '--'}
+    <div className={styles.card}>
+      <div className={styles.values}>
+        <h2>{label}:</h2>
+        {value ? (
+          <span>
+            {value}
+            {label === 'Temperatur' ? '°' : null}
+            {label === 'Vindstyrka' ? ' m/s' : null}
+            {label === 'Nederbörd' ? ' mm' : null}
+            {label === 'Luftfuktighet' ? '%' : null}
+          </span>
+        ) : (
+          '--'
+        )}
+        {label === 'Temperatur' && icon ? (
+          <div className={styles.icon}>
+            <Icon number={icon} />
+          </div>
+        ) : null}
       </div>
     </div>
   );

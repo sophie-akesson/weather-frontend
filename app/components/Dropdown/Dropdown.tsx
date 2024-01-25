@@ -1,10 +1,15 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Rubik } from 'next/font/google';
 
 import { ICityContext, useCityContext } from '@/utils/cityContext';
 import { capitalize } from '@/utils/capitalize';
+
+import styles from './Dropdown.module.css';
+
+const rubik = Rubik({ subsets: ['latin'] });
 
 interface Props {
   options: DropdownOption[];
@@ -41,9 +46,14 @@ export const Dropdown = ({ options }: Props) => {
   }, [cityState, pathname, router]);
 
   return (
-    <select name="city" value={cityState} onChange={(e) => handleDropdownChange(e.target.value)}>
+    <select
+      className={`${styles.dropdown} ${rubik.className}`}
+      name="city"
+      value={cityState}
+      onChange={(e) => handleDropdownChange(e.target.value)}
+    >
       <option value="stad" disabled>
-        Stad
+        Ingen stad vald
       </option>
       {options.map((option) => (
         <option key={option.name} value={option.name}>

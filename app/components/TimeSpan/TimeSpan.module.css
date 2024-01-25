@@ -1,0 +1,5 @@
+@media (min-width: 1024px) {
+  .timespan {
+    min-width: 350px;
+  }
+}

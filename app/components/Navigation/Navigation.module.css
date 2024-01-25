@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-sm) 0 0;
+}
+
+.link,
+.link:visited {
+  font-size: var(--size-6);
+  color: var(--color-on-background-secondary);
+  font-weight: 600;
+  padding: var(--spacing-xs) 0;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .navigation {
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    margin: 0 0 0 auto;
+    padding: 0;
+  }
+
+  .link,
+  .link:visited {
+    font-size: var(--size-5);
+  }
+}

@@ -4,11 +4,13 @@ import { TimeSpan } from '@/components/TimeSpan/TimeSpan';
 import { cities } from '@/utils/cities';
 import { transformCities } from '@/utils/transformCities';
 
+import styles from './Header.module.css';
+
 export const Header = () => {
   return (
-    <div>
-      <Dropdown options={transformCities(cities)} />
+    <div className={styles.header}>
       <TimeSpan />
+      <Dropdown options={transformCities(cities)} />
       <Navigation />
     </div>
   );

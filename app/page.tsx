@@ -9,6 +9,8 @@ import { getAccumulatedPrecipitation, getHighestValue } from '@/utils/transformD
 import { Card } from '@/components/Card/Card';
 import { ICityContext, useCityContext } from '@/utils/cityContext';
 
+import styles from './page.module.css';
+
 export default function Home() {
   const { cityState } = useCityContext() as ICityContext;
   const [forecast, setForecast] = useState<SMHIServiceResponse>();
@@ -53,10 +55,12 @@ export default function Home() {
 
   return (
     <main>
-      <Card label="Temperatur" value={temperature} icon={icon} />
-      <Card label="Nederbörd" value={precipitation} />
-      <Card label="Vindstyrka" value={wind} />
-      <Card label="Luftfuktighet" value={humidity} />
+      <div className={styles.container}>
+        <Card label="Temperatur" value={temperature} icon={icon} />
+        <Card label="Nederbörd" value={precipitation} />
+        <Card label="Vindstyrka" value={wind} />
+        <Card label="Luftfuktighet" value={humidity} />
+      </div>
     </main>
   );
 }

@@ -1,0 +1,12 @@
+.dropdown {
+  background: var(--color-foreground);
+  border-radius: var(--radius);
+  padding: var(--spacing-xs);
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  background: #fff url('/icons/chevron-down.svg') no-repeat top 0.8906rem right 0.8906rem / 1rem
+    1rem;
+  font-weight: 500;
+  min-width: 12.5rem;
+}

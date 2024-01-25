@@ -1,0 +1,16 @@
+.header {
+  padding: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  max-width: var(--max-content-width);
+}
+
+@media (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    height: calc(var(--spacing-xxl) * 2);
+  }
+}
