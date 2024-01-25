@@ -11,6 +11,6 @@
   .header {
     flex-direction: row;
     align-items: center;
-    height: calc(var(--spacing-xxl) * 2);
+    height: 20vh;
   }
 }

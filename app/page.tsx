@@ -27,6 +27,7 @@ export default function Home() {
 
     const data = await getForecast(selectedCity.longitude, selectedCity.latitude);
 
+    console.log(data);
     setForecast(data);
   };
 
@@ -35,8 +36,6 @@ export default function Home() {
   }, [cityState]);
 
   useEffect(() => {
-    console.log(forecast);
-
     if (forecast) {
       const highestTemperature = getHighestValue(forecast, Name.T);
       setTemperature(highestTemperature.parameter.toString());
