@@ -1,0 +1,6 @@
+.about {
+  background-color: var(--color-foreground);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius);
+  margin: var(--spacing-xxl) auto;
+}
