@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import { header } from '../../../translations/sv.json';
+
 import { Header } from './Header';
 
 jest.mock('next/navigation', () => ({
@@ -8,17 +10,9 @@ jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }));
 
-jest.mock('../../utils/cityContext', () => ({
-  useCityContext: () => {
-    return {
-      cityState: 'Stockholm',
-    };
-  },
-}));
-
 describe('Header', () => {
   it('renders successfully', () => {
-    const { container } = render(<Header />);
+    const { container } = render(<Header translations={header} lang="sv" />);
     expect(container).toBeInTheDocument();
   });
 });

@@ -16,9 +16,18 @@
   text-decoration: none;
 }
 
+.icon {
+  position: absolute;
+  top: 2rem;
+  right: var(--spacing-sm);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 @media (min-width: 1024px) {
   .navigation {
     flex-direction: row;
+    align-items: center;
     gap: var(--spacing-sm);
     margin: 0 0 0 auto;
     padding: 0;
@@ -27,5 +36,9 @@
   .link,
   .link:visited {
     font-size: var(--size-6);
+  }
+
+  .icon {
+    position: unset;
   }
 }

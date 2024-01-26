@@ -1,18 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CityProvider } from '@/utils/cityContext';
+import header from '../../../translations/sv.json';
 
 import { Header } from './Header';
 
-const ContextDecorator = (Story: any) => (
-  <CityProvider>
-    <Story />
-  </CityProvider>
-);
-
 const meta: Meta<typeof Header> = {
   component: Header,
-  decorators: [ContextDecorator],
   parameters: {
     nextjs: {
       appDirectory: true,
@@ -20,6 +13,11 @@ const meta: Meta<typeof Header> = {
         pathname: '/',
       },
     },
+  },
+  args: {
+    translations: header.header,
+    lang: 'sv',
+    city: 'Sundsvall',
   },
 };
 

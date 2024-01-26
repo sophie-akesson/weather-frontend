@@ -1,0 +1,33 @@
+{
+  "header": {
+    "heading": "Today's forecast",
+    "detailedHeading": "10 day forecast",
+    "about": "About this page",
+    "dropdownLabel": "Choose city",
+    "navigation": {
+      "detailedForecastLabel": "10 day forecast",
+      "todaysForecastLabel": "Today's forecast",
+      "aboutLabel": "About this page"
+    }
+  },
+  "home": {
+    "temp": "Temperature",
+    "precipitation": "Precipitation",
+    "wind": "Wind force",
+    "humidity": "Humidity"
+  },
+  "table": {
+    "timeLabel": "Hour",
+    "tempLabel": "Weather",
+    "longPrecipitationLabel": "Precipitation in mm",
+    "shortPrecipitationLabel": "Pcpn. mm",
+    "windLabel": "Wind m/s",
+    "humiditylabel": "Humidity",
+    "ariaPrecipitationLabel": "Precipitation in mm"
+  },
+  "about": {
+    "paragraphOne": "This page is built using data from SMHI.",
+    "paragraphTwo": "For today's forecast the highest temperature is displayed.",
+    "paragraphThree": "Rain is displayed using the minimum value."
+  }
+}

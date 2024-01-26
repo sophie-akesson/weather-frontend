@@ -1,9 +1,9 @@
-.timespan {
+.heading {
   color: var(--color-on-background-primary);
 }
 
 @media (min-width: 1024px) {
-  .timespan {
+  .heading {
     min-width: 21.875rem;
   }
 }

@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CityProvider } from '@/utils/cityContext';
+import header from '../../../translations/sv.json';
 
 import { Navigation } from './Navigation';
 
-const ContextDecorator = (Story: any) => (
-  <CityProvider>
-    <Story />
-  </CityProvider>
-);
-
 const meta: Meta<typeof Navigation> = {
   component: Navigation,
-  decorators: [ContextDecorator],
+  args: {
+    detailedForecastLabel: header.header.navigation.detailedForecastLabel,
+    todaysForecastLabel: header.header.navigation.todaysForecastLabel,
+    aboutLabel: header.header.navigation.aboutLabel,
+    lang: 'sv',
+    city: 'Sundsvall',
+  },
 };
 
 export default meta;

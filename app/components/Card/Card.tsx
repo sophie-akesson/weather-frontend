@@ -3,14 +3,13 @@ import { Icon } from '@/components/Icon/Icon';
 import styles from './Card.module.css';
 
 interface Props {
-  label: Label;
+  label: string;
   value?: string;
   icon?: string;
+  type: 'temp' | 'wind' | 'precipitation' | 'humidity';
 }
 
-export type Label = 'Temperatur' | 'Vindstyrka' | 'Nederbörd' | 'Luftfuktighet';
-
-export const Card = ({ label, value, icon }: Props) => {
+export const Card = ({ label, value, icon, type }: Props) => {
   return (
     <div className={styles.card}>
       <div className={styles.values}>
@@ -18,15 +17,15 @@ export const Card = ({ label, value, icon }: Props) => {
         {value ? (
           <span>
             {value}
-            {label === 'Temperatur' ? '°' : null}
-            {label === 'Vindstyrka' ? ' m/s' : null}
-            {label === 'Nederbörd' ? ' mm' : null}
-            {label === 'Luftfuktighet' ? '%' : null}
+            {type === 'temp' ? '°' : null}
+            {type === 'wind' ? ' m/s' : null}
+            {type === 'precipitation' ? ' mm' : null}
+            {type === 'humidity' ? '%' : null}
           </span>
         ) : (
           '--'
         )}
-        {label === 'Temperatur' && icon ? (
+        {type === 'temp' && icon ? (
           <div className={styles.icon}>
             <Icon number={icon} />
           </div>

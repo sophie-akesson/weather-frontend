@@ -5,9 +5,25 @@ import styles from './Table.module.css';
 
 interface Props {
   forecast?: Forecast[];
+  timeLabel: string;
+  tempLabel: string;
+  ariaPrecipitationLabel: string;
+  longPrecipitationLabel: string;
+  shortPrecipitationLabel: string;
+  windLabel: string;
+  humiditylabel: string;
 }
 
-export const Table = ({ forecast }: Props) => {
+export const Table = ({
+  forecast,
+  timeLabel,
+  tempLabel,
+  ariaPrecipitationLabel,
+  longPrecipitationLabel,
+  shortPrecipitationLabel,
+  windLabel,
+  humiditylabel,
+}: Props) => {
   return (
     <div className={styles.tableWrapper}>
       {forecast &&
@@ -17,19 +33,19 @@ export const Table = ({ forecast }: Props) => {
               <caption>{date.date}</caption>
               <thead>
                 <tr>
-                  <th>Tid</th>
-                  <th>Väder</th>
+                  <th>{timeLabel}</th>
+                  <th>{tempLabel}</th>
                   <th>
-                    <span className={styles.ariaInvisible}>Nederbörd</span>
+                    <span className={styles.ariaInvisible}>{ariaPrecipitationLabel}</span>
                     <span className={styles.desktop} aria-hidden="true">
-                      Nederbörd i mm
+                      {longPrecipitationLabel}
                     </span>
                     <span className={styles.mobile} aria-hidden="true">
-                      Ndb. mm
+                      {shortPrecipitationLabel}
                     </span>
                   </th>
-                  <th>Vindstyrka m/s</th>
-                  <th>Luftfuktighet</th>
+                  <th>{windLabel}</th>
+                  <th>{humiditylabel}</th>
                 </tr>
               </thead>
               <tbody>
@@ -43,7 +59,7 @@ export const Table = ({ forecast }: Props) => {
                             <Icon number={item.Wsymb2[0].toString()} />
                           </div>
                         ) : null}
-                        {item.t}°
+                        <span className={styles.weather}>{item.t}°</span>
                       </td>
                       <td>{item.pmin}</td>
                       <td>{item.ws}</td>

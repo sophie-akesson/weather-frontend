@@ -9,5 +9,5 @@ interface Props {
 export const Icon = ({ number }: Props) => {
   const src = getIcon(Number(number));
 
-  return <Image src={src ?? ''} alt="Weather symbol" style={{ objectFit: 'cover' }} fill />;
+  return <Image src={src ?? ''} alt="Weather symbol" fill />;
 };

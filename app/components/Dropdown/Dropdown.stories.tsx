@@ -2,21 +2,15 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { cities } from '@/utils/cities';
 import { transformCities } from '@/utils/transformCities';
-import { CityProvider } from '@/utils/cityContext';
+
+import header from '../../../translations/sv.json';
 
 import { Dropdown } from './Dropdown';
 
 const transformedCities = transformCities(cities);
 
-const ContextDecorator = (Story: any) => (
-  <CityProvider>
-    <Story />
-  </CityProvider>
-);
-
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
-  decorators: [ContextDecorator],
 };
 
 export default meta;
@@ -34,5 +28,6 @@ export const Primary: Story = {
   },
   args: {
     options: transformedCities,
+    label: header.header.dropdownLabel,
   },
 };

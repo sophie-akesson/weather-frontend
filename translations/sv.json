@@ -1,0 +1,33 @@
+{
+  "header": {
+    "heading": "Dagens prognos",
+    "detailedHeading": "10-dygnsprognos",
+    "about": "Om denna sida",
+    "dropdownLabel": "Välj stad",
+    "navigation": {
+      "detailedForecastLabel": "10-dygnsprognos",
+      "todaysForecastLabel": "Dagens prognos",
+      "aboutLabel": "Om denna sida"
+    }
+  },
+  "home": {
+    "temp": "Temperatur",
+    "precipitation": "Nederbörd",
+    "wind": "Vindstyrka",
+    "humidity": "Luftfuktighet"
+  },
+  "table": {
+    "timeLabel": "Tid",
+    "tempLabel": "Väder",
+    "longPrecipitationLabel": "Nederbörd mm",
+    "shortPrecipitationLabel": "Ndb. mm",
+    "windLabel": "Vindstyrka m/s",
+    "humiditylabel": "Luftfuktighet",
+    "ariaPrecipitationLabel": "Nederbörd i mm"
+  },
+  "about": {
+    "paragraphOne": "Denna sida är byggd med data från SMHI.",
+    "paragraphTwo": "För dagens prognos visas högsta temperaturen under dygnets gång.",
+    "paragraphThree": "För regn visas det minsta möjliga värdet."
+  }
+}

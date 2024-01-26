@@ -41,7 +41,7 @@ export interface Forecast {
 
 const formatDate = (dateString: string): string => {
   const parsedDate = parseISO(dateString);
-  return format(parsedDate, 'dd/M');
+  return format(parsedDate, 'd/M');
 };
 
 const formatHour = (dateString: string): string => {

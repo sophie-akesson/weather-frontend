@@ -31,6 +31,10 @@
   font-weight: 600;
 }
 
+.table td {
+  padding: var(--spacing-xs) 0;
+}
+
 .table caption {
   padding: var(--spacing-xs);
   text-align: left;
@@ -88,10 +92,14 @@
     display: block;
   }
 
-  .alignmentFix {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    margin: 0 auto;
+  .icon {
+    margin-bottom: -1.25rem;
+    margin-left: 2rem;
+  }
+
+  .weather {
+    position: relative;
+    bottom: 1rem;
+    left: 1rem;
   }
 }
